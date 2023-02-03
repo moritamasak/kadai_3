@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @post = Post.all
   end
 
   def new
@@ -32,9 +32,9 @@ class PostsController < ApplicationController
       render :edit
     end
   end
-  def destory
+  def destroy
     @post = Post.find(params[:id])
-    @post.destory
+    @post.destroy
     redirect_to posts_path, notice: "ブログを削除しました！"
   end
 
